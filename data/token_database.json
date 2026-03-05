@@ -1,0 +1,194 @@
+{
+  "users": {
+    "user_001": {
+      "user_id": "user_001",
+      "total_token": 112,
+      "total_submissions": 3,
+      "created_at": "2026-03-01T00:14:53.791171"
+    },
+    "user_002": {
+      "user_id": "user_002",
+      "total_token": 0,
+      "total_submissions": 1,
+      "created_at": "2026-03-01T00:14:53.843010"
+    },
+    "user_003": {
+      "user_id": "user_003",
+      "total_token": 0,
+      "total_submissions": 1,
+      "created_at": "2026-03-01T00:14:53.863203"
+    },
+    "rakyat1": {
+      "user_id": "rakyat1",
+      "total_token": 0,
+      "total_submissions": 1,
+      "created_at": "2026-03-04T22:31:49.552627"
+    },
+    "rr12": {
+      "user_id": "rr12",
+      "total_token": 55,
+      "total_submissions": 1,
+      "created_at": "2026-03-04T22:45:58.750065"
+    },
+    "bjbk": {
+      "user_id": "bjbk",
+      "total_token": 225,
+      "total_submissions": 4,
+      "created_at": "2026-03-05T11:53:20.996163"
+    },
+    "omlvn": {
+      "user_id": "omlvn",
+      "total_token": 55,
+      "total_submissions": 1,
+      "created_at": "2026-03-05T18:56:21.513090"
+    },
+    "ono": {
+      "user_id": "ono",
+      "total_token": 115,
+      "total_submissions": 2,
+      "created_at": "2026-03-05T21:41:16.548518"
+    }
+  },
+  "transactions": [
+    {
+      "transaction_id": "TX000001",
+      "timestamp": "2026-03-01T00:14:53.791267",
+      "user_id": "user_001",
+      "brick_id": "BRICK_001",
+      "token_earned": 60,
+      "classification": "alive",
+      "confidence": 0.94,
+      "image": ""
+    },
+    {
+      "transaction_id": "TX000002",
+      "timestamp": "2026-03-01T00:14:53.825735",
+      "user_id": "user_001",
+      "brick_id": "BRICK_002",
+      "token_earned": 52,
+      "classification": "alive",
+      "confidence": 0.75,
+      "image": ""
+    },
+    {
+      "transaction_id": "TX000003",
+      "timestamp": "2026-03-01T00:14:53.843032",
+      "user_id": "user_002",
+      "brick_id": "BRICK_003",
+      "token_earned": 0,
+      "classification": "dead",
+      "confidence": 0.88,
+      "image": ""
+    },
+    {
+      "transaction_id": "TX000004",
+      "timestamp": "2026-03-01T00:14:53.863238",
+      "user_id": "user_003",
+      "brick_id": "BRICK_004",
+      "token_earned": 0,
+      "classification": "no_plant",
+      "confidence": 0.91,
+      "image": ""
+    },
+    {
+      "transaction_id": "TX000005",
+      "timestamp": "2026-03-01T00:14:53.888042",
+      "user_id": "user_001",
+      "brick_id": "BRICK_PALSU",
+      "token_earned": 0,
+      "classification": null,
+      "confidence": null,
+      "image": ""
+    },
+    {
+      "transaction_id": "TX000006",
+      "timestamp": "2026-03-04T22:31:49.552659",
+      "user_id": "rakyat1",
+      "brick_id": null,
+      "token_earned": 0,
+      "classification": null,
+      "confidence": null,
+      "image": "temp_20260304_223102615472.jpg"
+    },
+    {
+      "transaction_id": "TX000007",
+      "timestamp": "2026-03-04T22:45:58.750087",
+      "user_id": "rr12",
+      "brick_id": null,
+      "token_earned": 55,
+      "classification": "alive",
+      "confidence": 0.84,
+      "image": "temp_20260304_224519151567.jpg"
+    },
+    {
+      "transaction_id": "TX000008",
+      "timestamp": "2026-03-05T11:53:20.996188",
+      "user_id": "bjbk",
+      "brick_id": null,
+      "token_earned": 60,
+      "classification": "alive",
+      "confidence": 0.948,
+      "image": "temp_20260305_115318433551.jpg"
+    },
+    {
+      "transaction_id": "TX000009",
+      "timestamp": "2026-03-05T11:53:47.033440",
+      "user_id": "bjbk",
+      "brick_id": null,
+      "token_earned": 55,
+      "classification": "alive",
+      "confidence": 0.84,
+      "image": "temp_20260305_115343735249.jpg"
+    },
+    {
+      "transaction_id": "TX000010",
+      "timestamp": "2026-03-05T11:58:50.717120",
+      "user_id": "bjbk",
+      "brick_id": null,
+      "token_earned": 50,
+      "classification": "alive",
+      "confidence": 0.562,
+      "image": "temp_20260305_115841166753.jpg"
+    },
+    {
+      "transaction_id": "TX000011",
+      "timestamp": "2026-03-05T11:59:15.944022",
+      "user_id": "bjbk",
+      "brick_id": null,
+      "token_earned": 60,
+      "classification": "alive",
+      "confidence": 0.977,
+      "image": "temp_20260305_115912392520.jpg"
+    },
+    {
+      "transaction_id": "TX000012",
+      "timestamp": "2026-03-05T18:56:21.513112",
+      "user_id": "omlvn",
+      "brick_id": null,
+      "token_earned": 55,
+      "classification": "alive",
+      "confidence": 0.84,
+      "image": "temp_20260305_185543077340.jpg"
+    },
+    {
+      "transaction_id": "TX000013",
+      "timestamp": "2026-03-05T21:41:16.548543",
+      "user_id": "ono",
+      "brick_id": null,
+      "token_earned": 55,
+      "classification": "alive",
+      "confidence": 0.84,
+      "image": "temp_20260305_214038485959.jpg"
+    },
+    {
+      "transaction_id": "TX000014",
+      "timestamp": "2026-03-05T21:42:26.126575",
+      "user_id": "ono",
+      "brick_id": null,
+      "token_earned": 60,
+      "classification": "alive",
+      "confidence": 0.977,
+      "image": "temp_20260305_214217792895.jpg"
+    }
+  ]
+}
