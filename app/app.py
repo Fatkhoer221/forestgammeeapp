@@ -5,8 +5,8 @@
 import os
 import sys
 import json
-from flask import Flask, request, jsonify, render_template
-from flask_cors import CORS          # ← TAMBAHAN untuk Railway/Vercel
+from flask import Flask, request, jsonify   # ← render_template DIHAPUS
+from flask_cors import CORS
 from PIL import Image
 import io
 from datetime import datetime
@@ -14,14 +14,19 @@ from datetime import datetime
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 app = Flask(__name__)
-CORS(app)                            # ← TAMBAHAN agar Vercel bisa konek ke Railway
+CORS(app)   # ← izinkan Vercel konek ke Railway
 
 # ================================================
-# ENDPOINT: Serve Frontend
+# ENDPOINT: Status server (frontend ada di Vercel)
 # ================================================
 @app.route('/', methods=['GET'])
 def home():
-    return render_template('index.html')
+    return jsonify({
+        "status": "online",
+        "app": "MYCOTWIN-GUARDIAN ForestGem API",
+        "model": "Roboflow ViT 96.9%",
+        "endpoints": ["/verify", "/classify", "/balance/<user_id>", "/leaderboard"]
+    })
 
 # ================================================
 # ENDPOINT UTAMA: Pipeline Verifikasi Lengkap
@@ -110,9 +115,6 @@ def verify_pipeline():
             brick_verified=brick_ok
         )
 
-        # Kriteria dapat token:
-        # brick_ok → wajib setelah brick asli datang
-        # Sementara (brick belum ada): cukup tanaman hidup
         brick_db_exists = os.path.exists('data/brick_color_database.json')
         db_has_bricks = False
         if brick_db_exists:
@@ -222,14 +224,14 @@ def leaderboard():
 
 
 # ================================================
-# JALANKAN SERVER — support Railway (PORT env)
+# JALANKAN SERVER — Railway pakai PORT dari env
 # ================================================
 if __name__ == '__main__':
     print("=" * 55)
     print("  MYCOTWIN-GUARDIAN ForestGem-App API")
     print("  Roboflow ViT Model - Akurasi 96.9%!")
     print("=" * 55)
-    port = int(os.environ.get('PORT', 5000))      # ← DIUBAH: baca PORT dari Railway
+    port = int(os.environ.get('PORT', 5000))
     print(f"\n  Server: http://localhost:{port}")
     print("  Ctrl+C untuk stop\n")
-    app.run(debug=False, host='0.0.0.0', port=port)  # ← DIUBAH: debug=False untuk production
+    app.run(debug=False, host='0.0.0.0', port=port)
