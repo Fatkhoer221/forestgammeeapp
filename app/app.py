@@ -6,6 +6,7 @@ import os
 import sys
 import json
 from flask import Flask, request, jsonify, render_template
+from flask_cors import CORS          # ← TAMBAHAN untuk Railway/Vercel
 from PIL import Image
 import io
 from datetime import datetime
@@ -13,6 +14,7 @@ from datetime import datetime
 sys.path.insert(0, os.path.dirname(os.path.dirname(os.path.abspath(__file__))))
 
 app = Flask(__name__)
+CORS(app)                            # ← TAMBAHAN agar Vercel bisa konek ke Railway
 
 # ================================================
 # ENDPOINT: Serve Frontend
@@ -119,10 +121,8 @@ def verify_pipeline():
                 db_has_bricks = len(db.get("bricks", {})) > 0
 
         if db_has_bricks:
-            # Brick sudah terdaftar → wajib verifikasi brick
             approved = brick_ok and plant_ok and cnn_ok
         else:
-            # Brick belum ada → sementara hanya perlu tanaman hidup
             approved = plant_ok and cnn_ok
 
         if approved:
@@ -222,13 +222,14 @@ def leaderboard():
 
 
 # ================================================
-# JALANKAN SERVER
+# JALANKAN SERVER — support Railway (PORT env)
 # ================================================
 if __name__ == '__main__':
     print("=" * 55)
     print("  MYCOTWIN-GUARDIAN ForestGem-App API")
     print("  Roboflow ViT Model - Akurasi 96.9%!")
     print("=" * 55)
-    print("\n  Server: http://localhost:5000")
+    port = int(os.environ.get('PORT', 5000))      # ← DIUBAH: baca PORT dari Railway
+    print(f"\n  Server: http://localhost:{port}")
     print("  Ctrl+C untuk stop\n")
-    app.run(debug=True, host='0.0.0.0', port=5000)
+    app.run(debug=False, host='0.0.0.0', port=port)  # ← DIUBAH: debug=False untuk production
